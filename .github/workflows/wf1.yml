@@ -37,7 +37,7 @@ jobs:
         with:
           context: app
           # Path to the Dockerfile
-          file: src/
+          file: ./src/Dockerfile
           # Push is a shorthand for --output=type=registry
           push: true
           # List of tags
