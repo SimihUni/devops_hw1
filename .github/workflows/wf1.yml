@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v5.0.0
         with:
           # Path to the Dockerfile
-          file: /home/runner/work/devops_hw1/devops_hw1/src/Dockerfile
+          #file: /home/runner/work/devops_hw1/devops_hw1/src/Dockerfile
           # Push is a shorthand for --output=type=registry
           push: true
           # List of tags
