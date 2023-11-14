@@ -29,7 +29,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Check markdown files
-        run: npx markdown-cli **/*.md
+        uses: nosborn/github-action-markdown-cli@v3.3.0
+        with:
+          files: ./
 
   lint-with-flake8:
     runs-on: ubuntu-latest
