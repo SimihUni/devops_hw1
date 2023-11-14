@@ -15,6 +15,32 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  check-editor-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: editorconfig check
+        uses: editorconfig-checker/action-editorconfig-checker@v1.0.0
+
+  check-markdown-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Check markdown files
+        run: npx markdown-cli **/*.md
+
+  lint-with-flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: flake8 linting
+        uses: lukacat10/Flake8@v5
+        with:
+          path: ./src/
+
   sonar-scan:
     runs-on: ubuntu-latest
     environment: docker_env
