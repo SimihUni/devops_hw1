@@ -43,6 +43,20 @@ jobs:
         with:
           path: ./src/
 
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.10.13
+          architecture: x64
+      - name: Execute Unit Tests
+        run: python3 -m unittest src/app_test.py
+    
+  
   sonar-scan:
     runs-on: ubuntu-latest
     environment: docker_env
