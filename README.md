@@ -11,6 +11,7 @@ Install necessary dependencies
 ```bash
 pip3 install -r src/requirements.txt
 ```
+
 Start the application
 
 ```bash
